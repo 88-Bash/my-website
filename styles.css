@@ -1,0 +1,38 @@
+nav {
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+}
+
+ul {
+    padding: 0px 25px 0px 25px;;
+    border-width: 0px 0px 2px 0px;
+    border-style: outset;
+}
+
+li {
+    display: inline-block;
+    margin: 0px 10px 0px 10px;
+    cursor: pointer;
+}
+
+#content {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px 20px 0px;
+}
+
+.phone-menu {
+    display: none;
+}
+
+@media { (max-width: 400px;) 
+
+    body {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    #navbar {
+        display: absolute;
+    }
+}
