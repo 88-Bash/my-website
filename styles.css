@@ -1,3 +1,15 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    height: 20%;
+}
+
 nav {
     display: flex;
     justify-content: center;
@@ -12,36 +24,32 @@ ul {
 
 li {
     display: inline-block;
-    margin: 0px 10px 0px 10px;
+    margin: 0px 10px 10px 10px;
 }
 
-a:link {
-    color:black;
-    text-decoration: none;
-}
-
-a:visited{
-    color: black;
-    text-decoration: none;
-}
-
-#content {
+main {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#projects {
+    display: flex;
+    flex-direction: row;
+    margin: 0px 15px 0px 15px;
+}
+
+.project-window {
+    border: solid 2px violet;
+    height: 50px;
+    width: 50px;
+}
+
+.grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    margin: 20px 0px 20px 0px;
-}
-
-.phone-menu {
-    display: none;
-}
-
-@media { (max-width: 400px;) 
-
-    body {
-        display: flex;
-        flex-direction: column-reverse;
-    }
-    #navbar {
-        display: absolute;
-    }
+    height: 150px;
+    width: 150px;
 }
