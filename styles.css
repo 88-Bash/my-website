@@ -40,9 +40,8 @@ main {
 }
 
 .project-window {
+    width: 200px;
     border: solid 2px violet;
-    height: 50px;
-    width: 50px;
 }
 
 .grid {

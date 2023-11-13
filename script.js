@@ -1,11 +1,52 @@
-document.getElementById("home").addEventListener("click", function(){
-    fetch('./sections/home.txt')
-})
+class ProjectWeb {
+    constructor(name, type, status) {
+        this.name = name
+        this.type = type
+        this.status = status
+    }
+}
 
-document.getElementById("projects").addEventListener("click", function(){
-    fetch('./sections/projects.txt')
-})
+let webProjects = [
+    new ProjectWeb('My website', 'website', 'ongoing'),
+    new ProjectWeb('Pronomic', 'Landing website', 'paused')
+];
 
-document.getElementById("contacts").addEventListener("click", function(){
-    fetch('./sections/contacts.txt')
-})
+function projectDetails1(_projectName) {
+    let details1 = 'Name: ' + _projectName.name + '<br>';
+    details1 += 'Type: ' + _projectName.type + '<br>';
+    details1 += 'Status: ' + _projectName.status;
+
+    let elWeb1 = document.getElementById('webText');
+    elWeb1.innerHTML = details1;
+}
+
+projectDetails1(webProjects[0]);
+
+let currentWebProjectIndex = 0;
+
+document.getElementById("arrowUpWeb").addEventListener("click", function(){
+    currentWebProjectIndex = (currentWebProjectIndex + 1) % webProjects.length;
+    projectDetails1(webProjects[currentWebProjectIndex]);
+});
+
+document.getElementById("arrowDownWeb").addEventListener("click", function() {
+    currentWebProjectIndex = (currentWebProjectIndex - 1 + webProjects.length) % webProjects.length;
+    projectDetails1(webProjects[currentWebProjectIndex]);
+});
+
+
+class ProjectCrypto {
+    constructor(name, type, status) {
+        this.name = name;
+        this.type = type;
+        this.status = status;
+    }
+}
+
+class ProjectPersonal {
+    constructor(name, type, status) {
+        this.name = name;
+        this.type = type;
+        this.status = status;
+    }
+}
