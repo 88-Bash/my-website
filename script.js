@@ -24,12 +24,12 @@ projectDetails1(webProjects[0]);
 
 let currentWebProjectIndex = 0;
 
-document.getElementById("arrowUpWeb").addEventListener("click", function(){
+document.getElementById("arrow-up-web").addEventListener("click", function(){
     currentWebProjectIndex = (currentWebProjectIndex + 1) % webProjects.length;
     projectDetails1(webProjects[currentWebProjectIndex]);
 });
 
-document.getElementById("arrowDownWeb").addEventListener("click", function() {
+document.getElementById("arrow-down-web").addEventListener("click", function() {
     currentWebProjectIndex = (currentWebProjectIndex - 1 + webProjects.length) % webProjects.length;
     projectDetails1(webProjects[currentWebProjectIndex]);
 });
