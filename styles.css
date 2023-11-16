@@ -1,47 +1,28 @@
 body{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-header {
-    display: none;
-    align-items: center;
-    height: 20%;
-}
-
-footer{
-    display: none;
-}
-
-nav {
-    display: flex;
     justify-content: center;
-    font-size: x-large;
-}
-
-ul {
-    padding: 0px 25px 0px 25px;;
-    border-width: 0px 0px 2px 0px;
-    border-style: outset;
-}
-
-li {
-    display: inline-block;
-    margin: 0px 10px 10px 10px;
+    width: 100%;
 }
 
 main {
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    align-items:center;
+    width: 100%;
+    margin-right: 100px;
+}
+
+content {
+    flex-grow: 1;
+    display: flex;
     justify-content: center;
-    width: 96%;
-    height: 90%;
+    margin-right: 80px;
 }
 
 #projects {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
     margin: 0px 15px 0px 15px;
 }
 
@@ -60,4 +41,34 @@ main {
     align-items: center;
     justify-content: center;
     margin: 10px;
+}
+
+aside {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    border-left: 8px solid silver;
+    position: relative;
+}
+
+#circle {
+    width: 150px; /* or any other size */
+    height: 150px; /* should be the same as width to make it a perfect circle */
+    border: 4px solid silver;
+    border-radius: 50%; /* this creates the circular shape */
+    overflow: hidden; /* this ensures that the image does not spill out of the circle */
+    display: flex; /* centers the image horizontally and vertically */
+    align-items: center;
+    justify-content: center;
+    position: absolute; /* Add this line */
+    right: -55px; /* Half of the width to move it outside */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust vertical centering */
+}
+    
+.circle img {
+    max-width: 100%; /* ensures the image scales properly */
+    height: auto; /* maintains the aspect ratio */
+    /* Adjust the following as needed to position your image correctly */
+    object-fit: cover; /* this will cover the entire circle with the image */
 }
