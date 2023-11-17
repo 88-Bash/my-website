@@ -27,12 +27,15 @@ content {
 }
 
 .project-window {
-    width: 25vh;
-    border: solid 2px violet;
+    height: 40vh;
+    width: 40vh;
+    border: solid 4px silver;
+    border-radius: 5%;
 }
 
 .navigation-arrow{
    cursor: pointer;
+   margin: 15px 0px 15px 0px;
 }
 
 .grid {
@@ -52,23 +55,22 @@ aside {
 }
 
 #circle {
-    width: 150px; /* or any other size */
-    height: 150px; /* should be the same as width to make it a perfect circle */
+    width: 150px;
+    height: 150px; 
     border: 4px solid silver;
-    border-radius: 50%; /* this creates the circular shape */
-    overflow: hidden; /* this ensures that the image does not spill out of the circle */
-    display: flex; /* centers the image horizontally and vertically */
+    border-radius: 50%; 
+    overflow: hidden; 
+    display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute; /* Add this line */
-    right: -55px; /* Half of the width to move it outside */
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%); /* Adjust vertical centering */
+    position: absolute;
+    right: -55px;
+    top: 50%;
+    transform: translateY(-50%);
 }
     
 .circle img {
-    max-width: 100%; /* ensures the image scales properly */
-    height: auto; /* maintains the aspect ratio */
-    /* Adjust the following as needed to position your image correctly */
-    object-fit: cover; /* this will cover the entire circle with the image */
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
 }
