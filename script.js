@@ -50,3 +50,14 @@ class ProjectPersonal {
         this.status = status;
     }
 }
+
+function inflateWindow(element) {
+    // Remove the inflated class from any previously inflated window
+    const inflated = document.querySelector('.inflated');
+    if (inflated) {
+        inflated.classList.remove('inflated');
+    }
+
+    // Add the inflated class to the clicked element
+    element.classList.add('inflated');
+}
