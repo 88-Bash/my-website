@@ -52,12 +52,26 @@ class ProjectPersonal {
 }
 
 function inflateWindow(element) {
-    // Remove the inflated class from any previously inflated window
-    const inflated = document.querySelector('.inflated');
-    if (inflated) {
-        inflated.classList.remove('inflated');
+    // Remove the inflated class from any previously inflated element
+    let previouslyInflated = document.querySelector('.inflated');
+    if (previouslyInflated) {
+        previouslyInflated.classList.remove('inflated');
     }
 
     // Add the inflated class to the clicked element
     element.classList.add('inflated');
+
+    // Function to handle document click
+    function handleDocumentClick(event) {
+        // Check if the click is outside the inflated element
+        if (element !== event.target && !element.contains(event.target)) {
+            // Remove the inflated class
+            element.classList.remove('inflated');
+            // Remove this event listener since it's no longer needed
+            document.removeEventListener('click', handleDocumentClick);
+        }
+    }
+
+    // Add the event listener to the document
+    setTimeout(() => document.addEventListener('click', handleDocumentClick), 0);
 }
