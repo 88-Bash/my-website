@@ -113,3 +113,18 @@ aside {
     height: 20%;
     padding-top: 10px;
 }
+
+#slide-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100vh;
+    background-color: #f0f0f0;
+    overflow: hidden;
+    transition: width 0.3s ease-in-out;
+}
+
+#slide-content {
+    padding: 20px;
+}
