@@ -76,10 +76,6 @@ function inflateWindow(element) {
     setTimeout(() => document.addEventListener('click', handleDocumentClick), 0);
 }
 
-document.getElementById('circle').addEventListener('mouseover', function() {
-    document.getElementById('slide-container').style.width = '250px'; /* Adjust width as needed */
-});
-
-document.getElementById('circle').addEventListener('mouseout', function() {
-    document.getElementById('slide-container').style.width = '0';
-});
+function slideMenuWindow() {
+   
+}
