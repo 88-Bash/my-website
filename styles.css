@@ -1,57 +1,151 @@
-body{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
 
+/* body elements (header, main, footer) */
 header {
-    height: 18%;
-    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.5));
+    height: 12vh;
 }
 
 main {
-    top: 20%;
-    height: 56%;
     display: flex;
-    align-items: center;
+    height: 72vh;
 }
 
 footer {
-    height: 18%;
-    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.5));
+    height: 12vh;
 }
 
+/* main content elements (content, aside) */
+
 content {
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 75%;
     border-right: solid rgb(53, 53, 53) 10px;
     border-radius: 50%;
 }
 
+aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 25%;
+    padding: 0px 0px 0px 15px;
+}
+
+/* content elements (Upper-, projects, lower-lip) */
+
+#upper-lip {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    width: 100%;
+    padding: 0px 0px 7px 0px;
+}
+
 #projects {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin: 0px 15px 0px 15px;
+    align-items: center;
+    height: 70%;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.5));
 }
+
+.blur {
+    filter: blur(5px); /* Adjust the pixel value as needed */
+}
+
+/* projects elements (grid, photo-menu) */
+
+.grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 7px;
+    margin: 7px;
+}
+
+/* grid elements (project-window) */
 
 .project-window {
-    height: 40vh;
-    width: 40vh;
+    display: flex;
+    flex-direction: column;
     border: solid 4px silver;
-    border-radius: 5%;
-    padding: 5px 10px 5px 10px;
+    border-radius: 15px;
+    height: 100%;
+    width: 100%;
+    padding: 7px;
 }
 
-.inflated {
-    position: absolute;
-    z-index: 10;
-    width: 70%; 
-    height: 80%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-60%, -50%);
-    background-color: gray;
+/* project-window elements (inner-content) */
+
+.inner-content {
+    background-color: grey;
+    height: 100%;
+    border-radius: 15px;
+    padding: 10px;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.6));
+    cursor: pointer;
 }
+
+.inner-content:active {
+    filter: none;
+}
+
+/*---------------------------*/
+
+#photo-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 30px;
+    opacity: 0;
+    position: absolute;
+    width: 50px;
+    height: 60%;
+    top: 16%;
+    right: -100px;
+    border-radius: 10px 0px 0px 10px;
+    background-color: #333;
+    color: #fff;
+    transition: right 0.4s ease, opacity 0.6s ease, width 2s ease;
+    padding: 7px;
+    border: 2px solid silver;
+}
+
+#photo-menu.active {
+    right: -49; /* Slide in when the "active" class is applied */
+    opacity: 1;
+    width: 200px;
+    transition: right 0.4s ease, opacity 0.4s ease;
+}
+
+.menu-item {
+    cursor: pointer;
+}
+
+#lower-lip {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    padding: 7px 0px 0px 0px;
+}
+
+#upper-lip, #lower-lip {
+    min-height: 15%;
+}
+
+/*elemtns of upper and lower lip (navigation-arrow*/
 
 .navigation-arrow img {
     display: block;
@@ -66,48 +160,54 @@ content {
     filter: none;
 }
 
-.grid {
+/* aside elements (personal)*/
+
+#personal {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    margin: 10px;
-}
-
-/* aside content */
-
-aside {
-    display: flex;
+    align-items: center;
+    height: 80%;
     position: relative;
-    margin-left: 20px;
-    overflow: hidden;
 }
 
-#circle {
+/* personal elements (photo)*/
+
+#photo {
     border: 5px double silver;
-    border-radius: 10%;
+    border-radius: 15%;
     overflow: hidden;
+    position: relative;
 }
+
+#photo:hover #slider-button {
+    left: 0;
+}
+
+/* photo elements (slider-button, img)*/
 
 #slider-button {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 8vh;
+    align-items: center;
     border-top-right-radius: 15%;
     border-bottom-right-radius: 15%;
     border: 1px solid silver;
+    border-left: 0;
     position: absolute;
-    left: -40px;
     top: 50%;
+    left: -30px;
+    height: 18%;
     transform: translateY(-50%);
     background-color: #000000;
-    color: #fff;
     padding: 10px;
     cursor: pointer;
     transition: left 0.3s ease;
 }
 
-#circle:hover #slider-button {
-    left: 0px;
+#slider-button img {
+    transition: transform 0.3s ease;
+}
+
+#slider-button img.rotated {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease; /* Smooth rotation transition */
 }

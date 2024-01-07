@@ -7,48 +7,62 @@
     <link href="styles.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-    <header>here here</header>
+    <header></header>
     <main>
         <content>
+            <div id="upper-lip">
+                <div id="arrow-up-web" class="navigation-arrow"><img src="images/arrow-up-silver.png" alt="arrow up" height="70px"></div>
+                <div id="arrow-up-crypto" class="navigation-arrow"><img src="images/arrow-up-silver.png" alt="arrow up" height="70px"></div>
+                <div id="arrow-up-misc" class="navigation-arrow"><img src="images/arrow-up-silver.png" alt="arrow up" height="70px"></div>
+            </div>
             <div id="projects">
-                <div id="grid1" class="grid">
-                    <div id="arrow-up-web" class="navigation-arrow"><img src="images/arrow-up-silver.png" alt="arrow up" height="80"></div>
-                    <div id="web" class="project-window" onclick="inflateWindow(this)">
-                        <div id ="webImage"></div>
-                        <div id="webText" class="project-details">window1</div>
+                <div id="grid1" class="grid" onclick="inflateWindow(this)">
+                    <div id="web" class="project-window">
+                        <div class="inner-content">
+                            <div id ="webImage"></div>
+                            <div id="webText" class="project-details">window1</div>
+                        </div>
                     </div>
-                    <div id="arrow-down-web" class="navigation-arrow"><img src="images/arrow-down-silver.png" alt="arrow up" height="80"></div>
                 </div>
-                <div cid="grid2" class="grid">
-                    <div id="arrow-up-crypto" class="navigation-arrow">
-                        <img src="images/arrow-up-silver.png" alt="arrow up" height="80">
+                <div id="grid2" class="grid" onclick="inflateWindow(this)">
+                    <div id="crypto" class="project-window">
+                        <div class="inner-content">
+                            <div id ="cryptoImage"></div>
+                            <div id="cryptoText" class="project-details">window2</div>
+                        </div>
                     </div>
-                    <div id="crypto" class="project-window" onclick="inflateWindow(this)">
-                        <div id ="cryptoImage"></div>
-                        <div id="cryptoText" class="project-details">window2</div>
-                    </div>
-                    <div id="arrow-down-crypto" class="navigation-arrow"><img src="images/arrow-down-silver.png" alt="arrow up" height="80"></div>
                 </div>
-                <div id="grid3" class="grid">
-                    <div id="arrow-up-misc" class="navigation-arrow"><img src="images/arrow-up-silver.png" alt="arrow up" height="80"></div>
-                    <div id="misc" class="project-window" onclick="inflateWindow(this)">
-                        <div id ="miscImage"></div>
-                        <div id="miscText" class="project-details">window3</div>
+                <div id="grid3" class="grid" onclick="inflateWindow(this)">
+                    <div id="misc" class="project-window">
+                        <div class="inner-content">
+                            <div id ="miscImage"></div>
+                            <div id="miscText" class="project-details">window3</div>
+                        </div>
                     </div>
-                    <div id="arrow-down-misc" class="navigation-arrow"><img src="images/arrow-down-silver.png" alt="arrow up" height="80"></div>
                 </div>
+                <div id="photo-menu">
+                    <div id="about" class="menu-item" onclick="">About me</div>
+                    <div id="contacts" class="menu-item" onclick="">Contacts</div>
+                </div>
+            </div>
+            <div id="lower-lip">
+                <div id="arrow-down-web" class="navigation-arrow"><img src="images/arrow-down-silver.png" alt="arrow up" height="70px"></div>
+                <div id="arrow-down-crypto" class="navigation-arrow"><img src="images/arrow-down-silver.png" alt="arrow up" height="70px"></div>
+                <div id="arrow-down-misc" class="navigation-arrow"><img src="images/arrow-down-silver.png" alt="arrow up" height="70px"></div>
             </div>
         </content>
         <aside>
-            <div id="circle"  onclick="slideMenuWindow(this)">
-                <div id="slider-button">
-                    <img src="images/arrow-left.png" height="60px" width="35px">
+            <div id="personal">
+                <div id="photo">
+                    <div id="slider-button" onclick="toggleMenu()">
+                        <img src="images/arrow-left.png" height="60px" width="35px">
+                    </div>
+                    <img id="button-pic" src="images/myphoto.png">
                 </div>
-                <img src="images/myphoto.png">
             </div>
         </aside>
     </main>
-    <footer>is this fantasy</footer>
+    <footer></footer>
     <script src="script.js"></script>
 </body>
 </html>
