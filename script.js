@@ -1,3 +1,4 @@
+let menu = document.getElementById('photo-menu');
 class ProjectWeb {
     constructor(name, type, status) {
         this.name = name
@@ -27,11 +28,21 @@ let currentWebProjectIndex = 0;
 document.getElementById("arrow-up-web").addEventListener("click", function(){
     currentWebProjectIndex = (currentWebProjectIndex + 1) % webProjects.length;
     projectDetails1(webProjects[currentWebProjectIndex]);
+
+    if (menu.classList.contains('active')) {
+        toggleMenu();
+    }
+
 });
 
 document.getElementById("arrow-down-web").addEventListener("click", function() {
     currentWebProjectIndex = (currentWebProjectIndex - 1 + webProjects.length) % webProjects.length;
     projectDetails1(webProjects[currentWebProjectIndex]);
+
+    if (menu.classList.contains('active')) {
+        toggleMenu();
+    }
+    
 });
 
 
@@ -52,34 +63,83 @@ class ProjectPersonal {
 }
 
 function inflateWindow(element) {
-    // Remove the inflated class from any previously inflated element
-    let previouslyInflated = document.querySelector('.inflated');
-    if (previouslyInflated) {
-        previouslyInflated.classList.remove('inflated');
-    }
 
-    // Add the inflated class to the clicked element
-    element.classList.add('inflated');
+    let window1 = document.getElementById('grid1');
+    let window2 = document.getElementById('grid2');
+    let window3 = document.getElementById('grid3');
+    let arrow1up = document.getElementById('arrow-up-web');
+    let arrow2up = document.getElementById('arrow-up-crypto');
+    let arrow3up = document.getElementById('arrow-up-misc');
+    let arrow1down = document.getElementById('arrow-down-web');
+    let arrow2down = document.getElementById('arrow-down-crypto');
+    let arrow3down = document.getElementById('arrow-down-misc');
 
-    // Function to handle document click
-    function handleDocumentClick(event) {
-        // Check if the click is outside the inflated element
-        if (element !== event.target && !element.contains(event.target)) {
-            // Remove the inflated class
-            element.classList.remove('inflated');
-            // Remove this event listener since it's no longer needed
-            document.removeEventListener('click', handleDocumentClick);
+
+    if (window1.style.display === "none" || window2.style.display === "none" || window3.style.display === "none") {
+        window1.style.display = "flex";
+        window2.style.display = "flex";
+        window3.style.display = "flex";
+        arrow1up.style.display = 'flex';
+        arrow2up.style.display = 'flex';
+        arrow3up.style.display = 'flex';
+        arrow1down.style.display = 'flex';
+        arrow2down.style.display = 'flex';
+        arrow3down.style.display = 'flex';
+
+        if (menu.classList.contains('active')) {
+            toggleMenu();
         }
+
+        return;
     }
 
-    // Add the event listener to the document
-    setTimeout(() => document.addEventListener('click', handleDocumentClick), 0);
+    // Hide the other two windows and their respective arrows
+    if (element === window1) {
+        window2.style.display = "none";
+        arrow2up.style.display = "none";
+        arrow2down.style.display = "none";
+        window3.style.display = "none";
+        arrow3up.style.display = 'none';
+        arrow3down.style.display = 'none';
+    } else if (element === window2) {
+        window1.style.display = "none";
+        arrow1up.style.display = "none";
+        arrow1down.style.display = "none";
+        window3.style.display = "none";
+        arrow3up.style.display = 'none';
+        arrow3down.style.display = 'none';
+    } else if (element === window3) {
+        window1.style.display = "none";
+        arrow1up.style.display = "none";
+        arrow1down.style.display = "none";
+        window2.style.display = "none";
+        arrow2up.style.display = "none";
+        arrow2down.style.display = "none";
+    }
+
+    // Check if the menu is active and toggle it if needed
+    if (menu.classList.contains('active')) {
+        toggleMenu();
+    }
 }
 
-document.getElementById('circle').addEventListener('mouseover', function() {
-    document.getElementById('slide-container').style.width = '250px'; /* Adjust width as needed */
-});
+function toggleMenu() {
+    let menu = document.getElementById('photo-menu');
+    let button = document.querySelector('#slider-button img');
+    let grids = document.querySelectorAll('.grid'); // Select all elements with the class 'grid'
+    let arrows = document.querySelectorAll('.navigation-arrow');
 
-document.getElementById('circle').addEventListener('mouseout', function() {
-    document.getElementById('slide-container').style.width = '0';
-});
+    menu.classList.toggle('active');
+    button.classList.toggle('rotated');
+
+    // Loop through all elements with the class 'grid' and toggle the 'blur' class
+    grids.forEach(grid => {
+        grid.classList.toggle('blur');
+    });
+
+    // Loop through all navigation arrow elements and toggle the 'blur' class
+    arrows.forEach(arrow => {
+        arrow.classList.toggle('blur');
+    });
+}
+
