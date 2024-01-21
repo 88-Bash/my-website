@@ -82,6 +82,7 @@ aside {
     height: 100%;
     width: 100%;
     padding: 7px;
+    
 }
 
 /* project-window elements (inner-content) */
@@ -210,4 +211,17 @@ aside {
 #slider-button img.rotated {
     transform: rotate(180deg);
     transition: transform 0.3s ease; /* Smooth rotation transition */
+}
+
+.clone {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 7px;
+    margin: 7px;
+    transition: height 1s ease;
 }

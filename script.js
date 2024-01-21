@@ -42,7 +42,7 @@ document.getElementById("arrow-down-web").addEventListener("click", function() {
     if (menu.classList.contains('active')) {
         toggleMenu();
     }
-    
+
 });
 
 
@@ -61,6 +61,8 @@ class ProjectPersonal {
         this.status = status;
     }
 }
+
+
 
 function inflateWindow(element) {
 
@@ -101,6 +103,7 @@ function inflateWindow(element) {
         window3.style.display = "none";
         arrow3up.style.display = 'none';
         arrow3down.style.display = 'none';
+        
     } else if (element === window2) {
         window1.style.display = "none";
         arrow1up.style.display = "none";
@@ -121,6 +124,12 @@ function inflateWindow(element) {
     if (menu.classList.contains('active')) {
         toggleMenu();
     }
+}
+
+function stretchAndSlide(element) {
+
+    //depends witch element has been clicked
+    // it will trigger to set uo
 }
 
 function toggleMenu() {
