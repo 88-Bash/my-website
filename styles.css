@@ -1,40 +1,43 @@
 
-/* body elements (header, main, footer) */
-header {
-    height: 12vh;
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
 }
+/* body elements (header, main, footer) */
 
 main {
     display: flex;
-    height: 72vh;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 75%;
 }
 
-footer {
-    height: 12vh;
+#about-me-text {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    color: white;
+    font-size: 26px;
+    height: 95%;
+    width: 60%;
+    padding: 25px 35px;
+    overflow: auto;
 }
 
-/* main content elements (content, aside) */
-
-content {
+#main-content {
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    height: 100%;
-    width: 75%;
-    border-right: solid rgb(53, 53, 53) 10px;
-    border-radius: 50%;
+    text-align: left;
+    color: white;
+    font-size: 26px;
+    min-width: 65%;
 }
-
-aside {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    width: 25%;
-    padding: 0px 0px 0px 15px;
-}
-
-/* content elements (Upper-, projects, lower-lip) */
 
 #upper-lip {
     display: flex;
@@ -42,94 +45,50 @@ aside {
     justify-content: space-around;
     align-items: flex-end;
     width: 100%;
-    padding: 0px 0px 7px 0px;
+    padding: 0px 0px 10px 0px;
+}
+
+#arrow-up-web, #arrow-up-crypto ,#arrow-up-misc {
+    opacity: 0;
+    transition: ease 0.3s;
+    cursor: pointer;
+}
+
+#contact-elements {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+    font-size: 26px;
+    height: 95%;
+    width: 60%;
+    padding: 25px 35px;
+    overflow: auto;
 }
 
 #projects {
-    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    height: 70%;
-    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.5));
-}
-
-.blur {
-    filter: blur(5px); /* Adjust the pixel value as needed */
-}
-
-/* projects elements (grid, photo-menu) */
-
-.grid {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    height: 60%;
     width: 100%;
-    height: 100%;
-    padding: 7px;
-    margin: 7px;
 }
 
-/* grid elements (project-window) */
+#grid1, #grid2, #grid3 {
+    margin: 0px 5px;
+    width: 100%;
+    height: 95%;
+    cursor: pointer;
+}
 
 .project-window {
-    display: flex;
-    flex-direction: column;
-    border: solid 4px silver;
-    border-radius: 15px;
-    height: 100%;
-    width: 100%;
-    padding: 7px;
-}
-
-/* project-window elements (inner-content) */
-
-.inner-content {
-    background-color: grey;
-    height: 100%;
-    border-radius: 15px;
-    padding: 10px;
-    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.6));
-    cursor: pointer;
-}
-
-.inner-content:active {
-    filter: none;
-}
-
-/*---------------------------*/
-
-#photo-menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    font-size: 30px;
-    opacity: 0;
-    position: absolute;
-    width: 50px;
-    height: 60%;
-    top: 16%;
-    right: -100px;
-    border-radius: 10px 0px 0px 10px;
-    background-color: #333;
-    color: #fff;
-    transition: right 0.4s ease, opacity 0.6s ease, width 2s ease;
-    padding: 7px;
-    border: 2px solid silver;
-}
-
-#photo-menu.active {
-    right: -49; /* Slide in when the "active" class is applied */
-    opacity: 1;
-    width: 200px;
-    transition: right 0.4s ease, opacity 0.4s ease;
-}
-
-.menu-item {
-    cursor: pointer;
+    text-align: left;
+    color: white;
+    font-size: 18px;
+    padding: 8px;
+    overflow: auto;
 }
 
 #lower-lip {
@@ -138,69 +97,89 @@ aside {
     justify-content: space-around;
     align-items: flex-start;
     width: 100%;
-    padding: 7px 0px 0px 0px;
+    padding: 10px 0px 0px 0px;
 }
 
-#upper-lip, #lower-lip {
-    min-height: 15%;
-}
-
-/*elemtns of upper and lower lip (navigation-arrow*/
-
-.navigation-arrow img {
-    display: block;
-    margin: 15px;
-    transition: transform 0.2s, filter 0.2s;
-    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.5));
+#arrow-down-web, #arrow-down-crypto , #arrow-down-misc{
+    opacity: 0;
+    transition: 0.3s ease;
     cursor: pointer;
 }
 
-.navigation-arrow:active img {
-    transform: translateY(2px);
-    filter: none;
+aside {
+    display: flex;
+    align-items: center;
+    margin: 0px 0px 0px 10px;
 }
-
-/* aside elements (personal)*/
 
 #personal {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80%;
     position: relative;
-}
-
-/* personal elements (photo)*/
-
-#photo {
-    border: 5px double silver;
-    border-radius: 15%;
     overflow: hidden;
-    position: relative;
 }
 
-#photo:hover #slider-button {
-    left: 0;
+#photo-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 40%;
+    width: 30%;
+    color: white;
+    font-size: xx-large;
+    opacity: 0;
+    visibility: hidden;
+    transition: ease-in-out 0.3s;
+    right: 20%;
 }
 
-/* photo elements (slider-button, img)*/
+#photo-menu.active {
+    opacity: 1;
+    visibility: visible;
+    right: 24%;
+}
 
 #slider-button {
     display: flex;
     align-items: center;
     border-top-right-radius: 15%;
     border-bottom-right-radius: 15%;
-    border: 1px solid silver;
+    border: 7px solid silver;
     border-left: 0;
     position: absolute;
     top: 50%;
-    left: -30px;
-    height: 18%;
     transform: translateY(-50%);
+    height: 18%;
     background-color: #000000;
     padding: 10px;
     cursor: pointer;
     transition: left 0.3s ease;
+    left: -25px;
+}
+
+#button-pic {
+    width: 100%;
+    height: auto;
+}
+
+.grid {
+    border: solid silver 10px;
+    border-radius: 35px;
+    background-color: black;
+}
+
+.fade-out {
+    opacity: 0;
+    transform: scale(0); /* Scale down to 0 */
+    visibility: hidden; /* Hide after scaling down */
+    transition: opacity 0.3s, transform 0.3s, visibility 0.3s 0.3s;
+}
+
+#personal:hover #slider-button {
+    left: -5px;
 }
 
 #slider-button img {
@@ -210,4 +189,14 @@ aside {
 #slider-button img.rotated {
     transform: rotate(180deg);
     transition: transform 0.3s ease; /* Smooth rotation transition */
+}
+
+/* Add this to your existing CSS */
+.blur {
+    filter: blur(5px);
+}
+
+#contact-elements img {
+   height: 60px;
+   cursor: pointer;
 }
