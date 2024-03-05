@@ -9,11 +9,33 @@
 <body>
     <header></header>
     <main>
-        <content>
+        <div id="about-me-text" class="grid">
+            <p>Good to see you here! </p>
+            A short description about me and my journey with coding started 
+            when I was introduced to Blockchain technology and its purpose in 2018. 
+            Since then, I've been learning as much as possible and participated in 
+            different meetings. Many approaches started with the financial
+            aspect, but that wasn't something that kept my interest. Building, 
+            on the other hand, is something. I am passionate about. As a self-educated 
+            programmer, I cover a wide variety of skills from front-end
+            to back-end. I will be able to start up your website for your 
+            business or hobby, as well as create an NFT collection if you 
+            provide the necessary graphics. Tokens and simple swapping functions 
+            are also possible. I am still expanding my skills and experience, 
+            so I will gladly participate in any project with great enthusiasm.
+            I am excited to work with people with straightforward goals.
+        </div>
+        <div id="main-content">
             <div id="upper-lip">
-                <div id="arrow-up-web" class="navigation-arrow"><img src="images/arrow-up-silver.png" alt="arrow up" height="70px"></div>
-                <div id="arrow-up-crypto" class="navigation-arrow"><img src="images/arrow-up-silver.png" alt="arrow up" height="70px"></div>
-                <div id="arrow-up-misc" class="navigation-arrow"><img src="images/arrow-up-silver.png" alt="arrow up" height="70px"></div>
+                <img src="images/arrow-up-silver.png" alt="arrow up" height="80px" id="arrow-up-web" class="navigation-arrow">
+                <img src="images/arrow-up-silver.png" alt="arrow up" height="80px" id="arrow-up-crypto" class="navigation-arrow">
+                <img src="images/arrow-up-silver.png" alt="arrow up" height="80px" id="arrow-up-misc" class="navigation-arrow">
+            </div>
+            <div id="contact-elements" class="grid">
+                <img src="images/dislogo.png" text="Discord">
+                <img src="images/xlogo.png" text="Twitter">
+                <img src="images/inlogo.png" text="LinkedIN">
+                <img src="images/maillogo.png" text="Mail">
             </div>
             <div id="projects">
                 <div id="grid1" class="grid" onclick="inflateWindow(this)">
@@ -40,25 +62,23 @@
                         </div>
                     </div>
                 </div>
-                <div id="photo-menu">
-                    <div id="about" class="menu-item" onclick="">About me</div>
-                    <div id="contacts" class="menu-item" onclick="">Contacts</div>
-                </div>
             </div>
             <div id="lower-lip">
-                <div id="arrow-down-web" class="navigation-arrow"><img src="images/arrow-down-silver.png" alt="arrow up" height="70px"></div>
-                <div id="arrow-down-crypto" class="navigation-arrow"><img src="images/arrow-down-silver.png" alt="arrow up" height="70px"></div>
-                <div id="arrow-down-misc" class="navigation-arrow"><img src="images/arrow-down-silver.png" alt="arrow up" height="70px"></div>
+                <img src="images/arrow-down-silver.png" alt="arrow down" height="80px" id="arrow-down-web" class="navigation-arrow">
+                <img src="images/arrow-down-silver.png" alt="arrow down" height="80px" id="arrow-down-crypto" class="navigation-arrow">
+                <img src="images/arrow-down-silver.png" alt="arrow down" height="80px" id="arrow-down-misc" class="navigation-arrow">
             </div>
-        </content>
+        </div>
+        <div id="photo-menu" class="grid">
+            <div id="about" class="menu-item" style="cursor: pointer;">About me</div>
+            <div id="contacts" class="menu-item" style="cursor: pointer;">Contacts</div>
+        </div>
         <aside>
             <div id="personal">
-                <div id="photo">
-                    <div id="slider-button" onclick="toggleMenu()">
-                        <img src="images/arrow-left.png" height="60px" width="35px">
-                    </div>
-                    <img id="button-pic" src="images/myphoto.png">
+                <div id="slider-button" onclick="toggleMenu()">
+                    <img src="images/arrow-left.png" height="60px" width="35px">
                 </div>
+                <img id="button-pic" class="grid" src="images/myphoto.png">
             </div>
         </aside>
     </main>
