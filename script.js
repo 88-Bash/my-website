@@ -310,6 +310,3 @@ document.querySelector('#contacts').addEventListener('click', function() {
     contacts.style.display = 'flex';
     
  });
-
-
- //event listener for contact elements or hyperlinks.
